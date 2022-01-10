@@ -7,7 +7,7 @@ class News{
 
   Future<void> getNews() async{
      try{
-    Response response = await get(Uri.parse("https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=8407b56c9b6d40cbb6a7fa1ee376f107"));
+    Response response = await get(Uri.parse("https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey={apikey}"));
 
     var jsonData =jsonDecode(response.body);
     print(jsonData);
@@ -44,7 +44,7 @@ class CategoryNewsClass{
   Future<void> getNews(String category) async{
      try{
        print(category);
-    Response response = await get(Uri.parse("https://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=8407b56c9b6d40cbb6a7fa1ee376f107"));
+    Response response = await get(Uri.parse("https://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey={apikey}"));
 
     var jsonData =jsonDecode(response.body);
     print(jsonData);
